@@ -69,7 +69,7 @@ app.get('/api/menu', async (req, res) => {
 
 
 app.get('/', (req, res) => {
-    res.json({ "test": "Welcome to BiteFinder! - See Live Web URL for this Server - https://bitefinnder.netlify.app" });
+    res.json({ "test": "Welcome to BiteFinder! - See Live Web URL for this Server - https://bitefinder.netlify.app" });
 })
 
 app.listen(port, () => {
