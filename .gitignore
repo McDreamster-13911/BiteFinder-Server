@@ -7,3 +7,5 @@ dist/
 .env
 
 .cache
+
+README.md 

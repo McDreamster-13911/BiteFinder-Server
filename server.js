@@ -73,7 +73,7 @@ app.get('/api/menu', async (req, res) => {
 
 
 app.get('/', (req, res) => {
-    res.json({ "test": "Welcome to FoodFire! - See Live Web URL for this Server - https://foodfire-app.netlify.app" });
+    res.json({ "test": "Welcome to BiteFinder! - See Live Web URL for this Server - https://bitefinnder.netlify.app" });
 })
 
 app.listen(port, () => {
