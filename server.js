@@ -5,12 +5,17 @@ const fetch = require('cross-fetch');
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(cors());
+// Enable CORS for all routes
+app.use(cors({
+  origin: 'https://bitefinder.netlify.app', // Replace with your frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 // For Restaurant API
 app.get('/api/restaurants', async (req, res) => {
     const { lat, lng, page_type } = req.query;
-    console.log(req.query);
+    console.log("Received request with query:", req.query);
 
     const url = `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${lat}&lng=${lng}&page_type=${page_type}`;
 
@@ -27,6 +32,7 @@ app.get('/api/restaurants', async (req, res) => {
         }
 
         const data = await response.json();
+        console.log("Received data from Swiggy API:", data); // Add this line for debugging
         res.json(data);
     } catch (error) {
         console.error('Error:', error);
