@@ -7,10 +7,12 @@ const port = process.env.PORT || 3000;
 
 // Enable CORS for all routes
 app.use(cors({
-  origin: 'https://bitefinder.netlify.app', // Replace with your frontend URL
+  origin: 'https://bitefinder.netlify.app', 
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
+app.options('*', cors(corsOptions));
 
 // For Restaurant API
 app.get('/api/restaurants', async (req, res) => {
