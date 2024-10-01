@@ -12,7 +12,7 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
-app.options('*', cors(corsOptions));
+
 
 // For Restaurant API
 app.get('/api/restaurants', async (req, res) => {
