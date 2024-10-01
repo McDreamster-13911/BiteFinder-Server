@@ -10,7 +10,7 @@ app.use(cors({
   origin: '*', // Allow all origins, or specify an array of allowed origins
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true // This allows cookies and credentials to be passed along with the request
+  
 }));
 
 // Handle preflight requests (CORS preflight)
